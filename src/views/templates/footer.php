@@ -15,10 +15,10 @@
         </ul>
       </div>
       <div class="col-md-4">
-        <h5>Contactez-nous</h5>
-        <address class="mb-0">
-          1 Rue de l'Eglise 31000 Toulousie<br>
-          <span title="Phone">Tel:</span> 01 23 45 67 89
+        <h5><a href="#" class="text-white" data-bs-toggle="modal" data-bs-target="#myModal">Contactez-nous ici !</a></h5>
+        <address class="mb-0 mt-1">
+          Sinon vous êtes les bienvenus au :<br />
+          1 Rue de l'Eglise 31000 Toulousie
         </address>
       </div>
     </div>
