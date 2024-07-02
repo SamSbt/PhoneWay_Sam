@@ -1,0 +1,89 @@
+*,
+*::before,
+*::after { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+main {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    min-height: calc(100vh - 120px);
+
+}
+p, span {
+    font-size: 0.9rem;
+}
+.btn {
+    --bs-btn-font-size: 0.9rem;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #212529;
+}
+::-webkit-scrollbar-thumb {
+    background: #747272;
+}
+
+/* navbar style */
+.dropdown-item {
+    border-color: #fff;
+}
+.dropdown-menu {
+    --bs-dropdown-link-hover-bg: #747272 !important;
+    --bs-dropdown-link-active-bg: #424141 !important;
+    --bs-dropdown-border-color: #fff;
+}
+.btn-outline-dark {
+    --bs-btn-border-color: #fff;
+    --bs-btn-hover-bg: #747272;
+    --bs-btn-hover-border-color: #fff;
+    --bs-btn-active-bg: #424141;
+    --bs-btn-active-border-color: #fff;
+}
+/* navbar hover style*/
+.navbar-nav .nav-link {
+    text-decoration: none white;
+    transition: color 0.2s;
+}
+.navbar-nav .nav-link:hover {
+    text-decoration: underline white;
+}
+.navbar-nav .nav-link.active {
+    text-decoration: underline white;
+}
+
+/* footer style */
+.footerStyle address, .footerStyle p {
+    font-size: 0.8rem;
+    margin-bottom: 0 !important;
+}
+.footerStyle h5 {
+    font-size: 0.9rem;
+}
+
+
+/* form login style */
+.loginFormStyle form{
+    border-color: #424141 !important;
+    max-width: 350px;
+}
+.loginFormStyle a {
+    text-decoration: none;
+    color: #000;
+}
+.loginFormStyle a:hover {
+    text-decoration: underline;
+    color: #424141;
+}
