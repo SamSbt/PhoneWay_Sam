@@ -5,16 +5,14 @@ if (isset($_POST['send'])) {
   $email = htmlspecialchars($_POST['email']);
   $message = htmlspecialchars($_POST['message']);
 
-  require_once 'C:/wamp64/www/PhoneWay_Sam/src/configs/db.config.php';
-
-
-  // include_once "/../../../configs/db.config.php";
+  // require_once 'C:/wamp64/www/PhoneWay_Sam/src/configs/db.config.php';
+  require_once __DIR__ . "/../../configs/db.config.php";
   $dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME;
   $user = DB_USER;
   $pass = DB_PASSWORD;
 
   // débogage du code suite à des erreurs de frappe
-  echo "DSN: $dsn<br>";
+  // echo "DSN: $dsn<br>";
   try {
     $db = new PDO(
       $dsn,
@@ -49,6 +47,12 @@ if (isset($_POST['send'])) {
     echo "Erreur de connexion : " . $e->getMessage();
     exit;
   }
+  if ($result) { ?>
+    <div class="alert alert-success alert dismissible fade show" role="alert" style="margin-top:50px;">
+      Votre message est envoyé.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php }
 }
 ?>
 
@@ -77,16 +81,8 @@ if (isset($_POST['send'])) {
           <div class="mb-1 text-center">
             <button class="btn btn-success" name="send" type="submit">Envoyer</button>
           </div>
-
-          <?php if ($result) { ?>
-            <div class="alert alert-success alert dismissible fade show mt-3" role="alert">
-              Votre message est envoyé.
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-          <?php } ?>
-
         </form>
-      </div> 
+      </div>
 
     </div>
   </div>

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md bg-dark fixed-top">
+<nav class="navbar navbar-expand-md bg-dark fixed-top mb-3">
   <div class="container-fluid">
     <a class="navbar-brand ms-5 <?php if ($_SERVER['REQUEST_URI'] === '/'); ?>" href="/"><img src="assets/img/logo_2023.png" alt="Logo" width="40" class="d-inline-block align-text-top"></a>
 
@@ -27,6 +27,9 @@
 
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item me-4">
+          <a href="#" class="nav-link text-light" data-bs-toggle="modal" data-bs-target="#myModal" href="#">Contact</a>
+        </li>
+        <li class="nav-item me-4">
           <a class="nav-link text-light <?php if (strpos($_SERVER['REQUEST_URI'], '/connexion') !== false) echo 'active'; ?>" href="/connexion">Se connecter</a>
         </li>
       </ul>
@@ -40,3 +43,5 @@
     </div>
   </div>
 </nav>
+
+<?php require __DIR__ . "/contact.php"; ?>
