@@ -1,5 +1,3 @@
-<?php require __DIR__ . "/contact.php"; ?>
-
 <footer class="bg-dark text-white footerStyle">
   <div class="container-fluid pt-2 g-0">
     <div class="row text-center">
