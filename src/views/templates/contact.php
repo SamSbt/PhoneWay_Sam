@@ -5,7 +5,7 @@ if (isset($_POST['send'])) {
   $email = htmlspecialchars($_POST['email']);
   $message = htmlspecialchars($_POST['message']);
 
-  require_once __DIR__ . "/../../configs/connect.php";
+  require_once __DIR__ . "/../../config/database.php";
 
   try {
     $sql = "INSERT INTO contact (fullname, email, message) VALUES (?, ?, ?);";

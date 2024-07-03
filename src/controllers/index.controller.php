@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/../configs/connect.php";
+require_once __DIR__ . "/../config/database.php";
 
 try {
 $sql = "SELECT a.Titre, a.Description, m.Nom_Marque

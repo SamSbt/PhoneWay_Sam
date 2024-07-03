@@ -13,32 +13,53 @@ if (!empty($_POST)) {
   ) {
     // form complet
     // récupération des données du formulaire :
-    $nom = htmlspecialchars($_POST['inputNom']);
-    $prenom = htmlspecialchars($_POST['inputPrenom']);
-    $pseudo = htmlspecialchars($_POST['inputPseudo']);
+    $nom_utilisateur = htmlspecialchars($_POST['inputNom']);
+    $prenom_utilisateur = htmlspecialchars($_POST['inputPrenom']);
+    $username = htmlspecialchars($_POST['inputPseudo']);
     $email = htmlspecialchars($_POST['inputEmail']);
     $password = $_POST['inputPassword'];
     $passwordConfirm = $_POST['inputPasswordConfirm'];
-    $motDePasse = password_hash($_POST['inputPassword'], PASSWORD_ARGON2ID);
+    $motDePasse = password_hash($_POST['inputPassword'], PASSWORD_ARGON2ID); //méthode hashage pour PHP8+
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
       die("L'adresse email est incorrecte.");
       // email valide
       // vérification que le mot de passe est assez long et contient des lettres minuscules, majuscules, chiffres et des caractères spéciaux
-      // if (strlen($_POST['inputPassword']) >= 8 && preg_match('/[a-z]/', $_POST['inputPassword']) && preg_match('/[A-Z]/', $_POST['inputPassword']) && preg_match('/[0-9]/', $_POST['inputPassword']) && preg_match('/[^a-zA-Z0-9]/', $_POST['inputPassword'])) {
+      if (strlen($_POST['inputPassword']) >= 8 && preg_match('/[a-z]/', $_POST['inputPassword']) && preg_match('/[A-Z]/', $_POST['inputPassword']) 
+      && preg_match('/[0-9]/', $_POST['inputPassword']) && preg_match('/[^a-zA-Z0-9]/', $_POST['inputPassword'])) {
+      die("Votre mot de passe doit contenir 8 caractères minimums, des lettres minuscules, majuscules, chiffres et des caractères spéciaux.");}
+    }
         // mot de passe correct
         // vérification que le mot de passe et sa confirmation sont identiques
-        // if ($_POST['inputPassword'] === $_POST['inputPasswordConfirm']) {
-          // mots de passe identiques
-          // création de l'utilisateur en base de données
-          
-    }
+        if ($_POST['inputPassword'] === $_POST['inputPasswordConfirm']) {
+        die("Vos mots de passe doivent être identiques.");
+      }
+    }    
+
+    // création de l'utilisateur en base de données
+    require_once __DIR__. "/../config/database.php";
+  
+    // $sql = "INSERT INTO users (nom, prenom, pseudo, email, password) VALUES (:nom, :prenom, :pseudo, :email, :password)";
+    // $stmt = $pdo->prepare($sql);
+    // $stmt->execute([
+    //   ":nom" => $nom,
+    //   ":prenom" => $prenom,
+    //   ":pseudo" => $pseudo,
+    //   ":email" => $email,
+    //   ":password" => $motDePasse
+    // ]);
+
+    // vidéo 14 - 28min
+
+
+
+    
 
   } else {
     // form non complet
     die("Le formulaire est incomplet.");
   }
-}
+
 
 
 
