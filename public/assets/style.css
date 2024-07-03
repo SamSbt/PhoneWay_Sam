@@ -19,7 +19,7 @@ html, body {
     min-height: 100vh;
 }
 main {
-    padding-top:20px;
+    padding-top:30px;
     flex: 1;
 }
 
@@ -95,5 +95,5 @@ p, span {
 
 /* margin message send contact */
 .marginSendMsg {
-    margin-top: 50px;
+    margin-top: 60px;
 }
