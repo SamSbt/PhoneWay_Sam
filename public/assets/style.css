@@ -92,3 +92,8 @@ p, span {
     text-decoration: underline;
     color: #424141;
 }
+
+/* margin message send contact */
+.marginSendMsg {
+    margin-top: 50px;
+}

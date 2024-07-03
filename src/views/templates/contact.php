@@ -33,25 +33,25 @@ if (isset($_POST['send'])) {
         PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
       )
     );
-    $sql = "INSERT INTO contact (fullname, email, message) VALUES (:fullname, :email, :message);";
+    $sql = "INSERT INTO contact (fullname, email, message) VALUES (?, ?, ?);";
+    // protection contre les injections SQL
     $stmt = $db->prepare($sql);
-
-    // Liaison des paramètres pour se protéger contre les injections SQL
-    $stmt->bindParam(':fullname', $fullname, PDO::PARAM_STR);
-    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-    $stmt->bindParam(':message', $message, PDO::PARAM_STR);
-
-    $stmt->execute();
+    $result = $stmt->execute([$fullname, $email, $message]);
     $result = $stmt->rowCount() == 1;
   } catch (PDOException $e) {
     echo "Erreur de connexion : " . $e->getMessage();
     exit;
   }
   if ($result) { ?>
-    <div class="alert alert-success alert dismissible fade show" role="alert" style="margin-top:50px;">
+    <div class="alert alert-success alert dismissible fade show marginSendMsg" role="alert">
       Votre message est envoyé.
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
+    <script>
+      if (history.replaceState) {
+        history.replaceState(null, null, location.href);
+      }
+    </script>
 <?php }
 }
 ?>
