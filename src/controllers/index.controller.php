@@ -2,7 +2,7 @@
 require_once __DIR__ . "/../config/database.php";
 
 try {
-$sql = "SELECT a.Titre, a.Description, m.Nom_Marque
+$sql = "SELECT a.id_article, a.Titre, a.Description, m.Nom_Marque
 FROM article AS a
 JOIN marque AS m ON a.Id_Marque = m.Id_Marque
 ORDER BY Published_at DESC LIMIT 12";

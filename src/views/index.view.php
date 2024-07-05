@@ -4,7 +4,7 @@ require_once __DIR__ . "/templates/head.php"; ?>
 <div class="wrapper">
   <?php require __DIR__ . "/templates/navbar.php"; ?>
 
-<!-- mélanger l'ordre des articles -->
+  <!-- mélanger l'ordre des articles -->
   <?php shuffle($articles);
   ?>
 
@@ -19,13 +19,15 @@ require_once __DIR__ . "/templates/head.php"; ?>
 
           <div class="d-flex justify-content-center col-lg-3 col-md-4 col-sm-6 mb-4">
             <div class="card" style="width: 20rem;">
+            <a href=" /article?id=<?= $article['id_article'] ?>" class="text-black" style="text-decoration: none; display: block;">
               <img src="<?= $image_url; ?>" class="card-img-top" alt="Photo de présentation de l'article">
               <div class="card-body">
                 <h6 class="card-title"><?= $article['Titre'] ?></h6>
                 <p class="card-text mb-2"><?= $article['Description'] ?></p>
                 <span>Série: <a href="#" class="btn btn-dark rounded-5"><?= $article['Nom_Marque'] ?></a></span>
               </div>
-            </div>
+            </a>
+          </div>
           </div>
 
         <?php } ?>

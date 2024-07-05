@@ -8,7 +8,7 @@ $routes = [
   '/tag' => __DIR__ . '/src/controllers/tag.controller.php',
   '/connexion' => __DIR__ . '/src/controllers/login.controller.php',
   '/inscription' => __DIR__ . '/src/controllers/register.controller.php',
-
+  '/article' => __DIR__ . '/src/controllers/article.controller.php',
 ];
 
 function routeToController($uri, $routes)
