@@ -7,10 +7,9 @@ if ($id_article) {
     $sql = "SELECT a.id_article, a.Titre as titre, a.Description as summary, a.Published_at as published_at, a.Updated_at as updated_at, m.Nom_Marque 
             FROM article AS a 
             JOIN marque AS m ON a.Id_Marque = m.Id_Marque 
-            WHERE a.id_article = :id_article";
+            WHERE a.id_article = ?;";
     $stmt = $db->prepare($sql);
-    $stmt->bindParam(':id_article', $id_article, PDO::PARAM_INT);
-    $stmt->execute();
+    $stmt->execute([$_GET['id']]);
     $article = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($article) {
