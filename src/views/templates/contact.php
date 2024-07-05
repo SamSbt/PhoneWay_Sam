@@ -54,7 +54,7 @@ if (isset($_POST['send'])) {
             <textarea class="form-control" id="message" name="message" type="text" placeholder="Message" style="height: 10rem;" required></textarea>
           </div>
           <div class="mb-1 text-center">
-            <button class="btn btn-success" name="send" type="submit">Envoyer</button>
+            <button class="btn btn-outline-dark btn-dark text-light" name="send" type="submit">Envoyer</button>
           </div>
         </form>
       </div>
