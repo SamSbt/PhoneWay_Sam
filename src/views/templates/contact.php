@@ -16,9 +16,11 @@ if (isset($_POST['send'])) {
 
     if ($result) { ?>
       <div class="alert alert-success alert dismissible fade show marginSendMsg" role="alert">
-        Votre message est envoyé.
+        Merci pour votre message <?= $fullname; ?>.<br />
+        Vous recevrez une réponse à l'adresse email indiquée (<?= $email ?>).
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
+      <!-- script pour éviter que le formulaire soit soumis à nouveau si l'utilisateur rafraîchit la page : -->
       <script>
         if (history.replaceState) {
           history.replaceState(null, null, location.href);
