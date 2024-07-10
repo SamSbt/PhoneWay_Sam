@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md bg-dark fixed-top mb-3">
+<nav class="navbar navbar-expand-lg bg-dark fixed-top mb-3">
   <div class="container-fluid">
     <a class="navbar-brand ms-5 <?php if ($_SERVER['REQUEST_URI'] === '/'); ?>" href="/"><img src="assets/img/logo_2023.png" alt="Logo" width="40" class="d-inline-block align-text-top"></a>
 
@@ -7,7 +7,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item me-4">
           <a class="nav-link text-light <?php if ($_SERVER['REQUEST_URI'] === '/') echo 'active'; ?>" aria-current="page" href="/">Accueil</a>
         </li>
