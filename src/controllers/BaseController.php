@@ -23,7 +23,7 @@ class BaseController
     if (!isset($viewPath)) {
       $controllerName = str_replace("Controller", "", get_called_class());
       $controllerName = lcfirst(str_replace("s\\", "", $controllerName));
-      $viewPath = "views/pages/$controllerName.$this->actionName.php";
+      $viewPath = "../src/views/pages/$controllerName.$this->actionName.php";
     }
     require_once $viewPath;
   }

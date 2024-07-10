@@ -14,12 +14,11 @@ class Router
       $controllerName = "Home";
     }
     $controllerClassName = "Controllers\\" . $controllerName . "Controller";
-    $ControllerFilePath = lcfirst($controllerClassName) . ".php";
+    $ControllerFilePath = "..\\src\\" . lcfirst($controllerClassName) . ".php";
     if (!file_exists($ControllerFilePath)) {
       header('HTTP/1.0 404 Not found');
       die();
     }
-
 
     // suppression car func autoload mnt
     // include_once $ControllerFilePath;

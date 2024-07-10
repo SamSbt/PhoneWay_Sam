@@ -13,7 +13,7 @@ require_once __DIR__ . "/../partials/head.php"; ?>
 
       <div class="d-flex justify-content-center align-items-center flex-column">
         <p class="text-center my-3 mx-5 w-50">
-          <?= $article->summary ?>
+          <?= $article->description ?>
         </p>
         <p class="text-center">
           <i>Publié le <?= date("d/m/Y", strtotime($article->published_at)); ?>
