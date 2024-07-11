@@ -18,7 +18,7 @@ require_once __DIR__ . "/../partials/head.php"; ?>
 
           <div class="d-flex justify-content-center col-lg-3 col-md-4 col-sm-6 mb-4">
             <div class="card" style="width: 20rem;">
-              <a href=" /article?id=<?= $article["id"] ?>" class="text-black" style="text-decoration: none; display: block;">
+              <a href="/articles/details/<?= $article["id"] ?>" class="text-black" style="text-decoration: none; display: block;">
                 <img src="<?= $image_url; ?>" class="card-img-top" alt="Photo de présentation de l'article">
                 <div class="card-body">
                   <h6 class="card-title"><?= $article["titre"] ?></h6>

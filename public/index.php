@@ -14,4 +14,3 @@ spl_autoload_register("autoload");
 $router = new Controllers\Router();
 // // méthode responsable de l'exécution de l’action du contrôleur
 $router->start();
-// echo "salut";
