@@ -24,7 +24,7 @@ require_once __DIR__ . "/../partials/head.php"; ?>
           </div>
           <h5 class="mt-5 mb-2 text-center">Ou alors bienvenue !</h5>
           <div>
-            <a href="/inscription" class="text-center">Pas encore de compte ? Inscrivez-vous ici</a>
+            <a href="/register" class="text-center">Pas encore de compte ? Inscrivez-vous ici</a>
           </div>
 
         </form>

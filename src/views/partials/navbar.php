@@ -30,7 +30,7 @@
           <a href="#" class="nav-link text-light" data-bs-toggle="modal" data-bs-target="#myModal" href="#">Contact</a>
         </li>
         <li class="nav-item me-4">
-          <a class="nav-link text-light <?php if (strpos($_SERVER['REQUEST_URI'], '/connexion') !== false) echo 'active'; ?>" href="/connexion">Se connecter</a>
+          <a class="nav-link text-light <?php if (strpos($_SERVER['REQUEST_URI'], '/login') !== false) echo 'active'; ?>" href="/login">Se connecter</a>
         </li>
       </ul>
 

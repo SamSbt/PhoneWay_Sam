@@ -8,7 +8,7 @@ require_once __DIR__ . "/../partials/head.php"; ?>
       <div class="row loginFormStyle d-flex justify-content-center align-items-center">
         <h2 class="mb-4 text-center">Bienvenue chez Phone Way !</h2>
 
-        <?php if ($message) : ?>
+        <?php if (!empty($message)) : ?>
           <div class="alert alert-<?= htmlspecialchars($message_type) ?> alert-dismissible fade show" role="alert">
             <?= htmlspecialchars($message) ?>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
