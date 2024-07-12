@@ -1,4 +1,7 @@
 <?php
+
+use Repositories\ContactRepository;
+
 if (isset($_POST['send'])) {
   // fonction pour se prémunir des failles xss
   $fullname = htmlspecialchars($_POST['fullname']);
@@ -7,16 +10,15 @@ if (isset($_POST['send'])) {
 
   require_once __DIR__ . "/../../config/db.config.php";
 
+  $contactRepo = new ContactRepository();
+
   try {
-    $sql = "INSERT INTO contact (fullname, email, message) VALUES (?, ?, ?);";
-    // protection contre les injections SQL
-    $stmt = $db->prepare($sql);
-    $result = $stmt->execute([$fullname, $email, $message]);
-    $result = $stmt->rowCount() == 1;
+    // Insertion du contact dans la base de données
+    $result = $contactRepo->insertContact($fullname, $email, $message);
 
     if ($result) { ?>
       <div class="alert alert-success alert dismissible fade show marginSendMsg" role="alert">
-        Merci pour votre message <?= $fullname; ?>.<br />
+        Merci pour votre message <?= $fullname ?>.<br />
         Vous recevrez une réponse à l'adresse email indiquée (<?= $email ?>).
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
@@ -28,7 +30,8 @@ if (isset($_POST['send'])) {
       </script>
 <?php }
   } catch (PDOException $e) {
-    echo "Erreur lors de l'insertion : " . $e->getMessage();
+    // Gestion des erreurs et affichage des messages d'erreur
+    echo "<div class='alert alert-danger'>Erreur lors de l'insertion : " . htmlspecialchars($e->getMessage()) . "</div>";
   }
 }
 ?>

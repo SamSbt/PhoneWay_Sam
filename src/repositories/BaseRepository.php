@@ -8,7 +8,7 @@ use PDOException;
 class BaseRepository
 {
   private static $connection = null;
-  private function connect()
+  protected function connect()
   {
     if (self::$connection == null) {
       include_once __DIR__ . "/../config/db.config.php";
