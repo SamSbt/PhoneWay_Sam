@@ -1,47 +1,4 @@
 <?php
-// message 'form envoyé' ou d'erreur à l'envoi
-$errors = [];
-// si besoin de rediriger l'user, il ne faut pas de html avant. /!\
-// on vérifie que le formulaire a été envoyé :
-if (!empty($_POST)) {
-  if (
-    isset($_POST["inputEmail"], $_POST["inputPassword"])
-    && !empty($_POST["inputEmail"])
-    && !empty($_POST["inputPassword"])
-  ) {
-
-    // Vérification que l'adresse email est correcte
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $errors['email'] = "L'adresse email est incorrecte.";
-    }
-
-    // vérif de l'email utilisateur en base de données
-    require_once __DIR__ . "/../../config/database.php";
-    try {
-      // Début de la transaction
-      $db->beginTransaction();
-
-
-
-      // Vérification dans la table `compte`
-      $sql = "SELECT * FROM 'compte' WHERE 'email' = :email";
-      $query = $db->prepare($sql);
-      $query->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
-
-      // Validation de la transaction
-      $db->commit();
-    } catch (Exception $e) {
-      // Annulation de la transaction en cas d'erreur
-      $db->rollBack();
-      die("Erreur lors de l'inscription : " . $e->getMessage());
-    }
-  }
-}
-
-
-
-
-
 require_once __DIR__ . "/../partials/head.php"; ?>
 <div class="wrapper">
   <?php require __DIR__ . "/../partials/navbar.php"; ?>
