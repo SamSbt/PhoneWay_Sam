@@ -13,14 +13,14 @@
         </li>
 
         <li class="nav-item dropdown me-4">
-          <a class="nav-link dropdown-toggle text-light <?php if ($_SERVER['REQUEST_URI'] === '/articles' || $_SERVER['REQUEST_URI'] === '/tag') echo 'active'; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-light <?php if ($_SERVER['REQUEST_URI'] === '/series' || $_SERVER['REQUEST_URI'] === '/tag') echo 'active'; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Articles</a>
           <ul class="dropdown-menu bg-dark text-bg-light">
-            <li><a class="dropdown-item text-light <?php if ($_SERVER['REQUEST_URI'] === '/articles') echo 'active'; ?>" href="/articles">Articles</a></li>
+            <li><a class="dropdown-item text-light <?php if ($_SERVER['REQUEST_URI'] === '/series') echo 'active'; ?>" href="/series">Séries</a></li>
             <li>
               <hr class="dropdown-divider text-bg-light">
             </li>
-            <li><a class="dropdown-item text-light <?php if ($_SERVER['REQUEST_URI'] === '/tag') echo 'active'; ?>" href="/tag">Tag</a></li>
+            <li><a class="dropdown-item text-light <?php if ($_SERVER['REQUEST_URI'] === '/tag') echo 'active'; ?>" href="/tags">Tag</a></li>
           </ul>
         </li>
       </ul>

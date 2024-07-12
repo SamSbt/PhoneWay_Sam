@@ -1,8 +1,8 @@
 <?php
-$titre = "Phone Way Tag";
-require_once __DIR__ . "/templates/head.php"; ?>
+require_once __DIR__ . "/../partials/head.php"; ?>
 <div class="wrapper">
-  <?php require __DIR__ . "/templates/navbar.php"; ?>
+  <?php require __DIR__ . "/../partials/navbar.php"; ?>
+
 
   <main class="d-flex justify-content-center align-items-center flex-column">
     <section class="container my-5">
@@ -12,6 +12,7 @@ require_once __DIR__ . "/templates/head.php"; ?>
     </section>
   </main>
 
-  <?php require __DIR__ . "/templates/footer.php"; ?>
+
+  <?php require __DIR__ . "/../partials/footer.php"; ?>
 </div>
-<?php require __DIR__ . "/templates/foot.php"; ?>
+<?php require __DIR__ . "/../partials/foot.php"; ?>

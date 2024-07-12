@@ -10,7 +10,7 @@ class HomeController extends BaseController
     $articlesAndMarques = [];
     $articleRepository = new ArticleRepository();
     $marqueRepository = new MarqueRepository();
-    $articles = $articleRepository->getLastPublishedArticles(12);
+    $articles = $articleRepository->getLastPublishedArticles(8);
     foreach($articles as $article){
       $marque = $marqueRepository->getMarqueByMarqueId($article->id_marque);
       $articlesAndMarques[] = [
