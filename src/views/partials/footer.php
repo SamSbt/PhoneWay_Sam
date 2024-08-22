@@ -4,8 +4,8 @@
       <div class="col">
         <h5>Réseaux sociaux</h5>
         <ul class="list-inline">
-          <li class="list-inline-item"><a href="#" class="text-white"><i class="bi bi-facebook"></i></a></li>
-          <li class="list-inline-item"><a href="#" class="text-white"><i class="bi bi-twitter"></i></a></li>
+          <li class="list-inline-item"><a href="#" className="text-light"><i class="bi bi-facebook"></i></a></li>
+          <li class="list-inline-item"><a href="#" className="text-white"><i class="bi bi-twitter"></i></a></li>
           <li class="list-inline-item"><a href="#" class="text-white"><i class="bi bi-instagram"></i></a></li>
           <li class="list-inline-item"><a href="#" class="text-white"><i class="bi bi-linkedin"></i></a></li>
         </ul>

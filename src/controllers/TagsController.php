@@ -11,7 +11,7 @@ class TagsController extends BaseController
 
     $tagRepository = new TagRepository();
     $attributes = [
-      'articles' => $tagRepository,
+      'tags' => $tagRepository,
       'pageTitle' => "PhoneWay - Tag",
     ];
     $this->render($attributes);
